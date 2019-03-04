@@ -1,0 +1,39 @@
+import pandas as pd
+total = pd.read_csv("totalwithlabel.csv",encoding='utf-8')
+
+grouped = total['labels_text'].groupby(total['labels_text'])
+
+
+grouped.size()
+
+#라벨별 갯수 확인 후 10만개씩 balancing 하기
+
+
+df = total[total.labels_text=='__label__0']
+
+
+from sklearn.utils import resample
+
+# Upsample minority class 
+df_upsampled = resample(df,
+                        replace=True,     # sample with replacement
+                        n_samples=100000, # to match majority class
+                        random_state=123) # reproducible results
+
+
+
+df_majority = total[total.labels_text=='__label__1']
+
+
+# downsample majority class
+
+
+
+df_majority_downsampled = resample(df_majority,
+                                     replace=False,    # sample without replacement
+                                     n_samples=100000,    # to match minority class
+                                     random_state=123)
+
+
+
+

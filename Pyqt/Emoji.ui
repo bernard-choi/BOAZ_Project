@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1442</width>
+    <height>839</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>210</y>
+     <width>151</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../chrome_download/submit-button-png-25796.png</normaloff>../chrome_download/submit-button-png-25796.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>200</width>
+     <height>120</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="sentiment_output">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>340</y>
+     <width>801</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 36pt &quot;Agency FB&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="text_output">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>480</y>
+     <width>801</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 48pt &quot;Agency FB&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>210</y>
+     <width>621</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>1920</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../mojimoji.png</normaloff>../mojimoji.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>1920</width>
+     <height>200</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>730</y>
+     <width>391</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../대지 1.png</normaloff>../대지 1.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../명아.png</normaloff>../명아.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>100</width>
+     <height>100</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token1">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token2">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token4">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token7">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token5">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token6">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token8">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token10">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="token9">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_reset">
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>650</y>
+     <width>71</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>reset</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sample_line1">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>240</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>배고프다 밥먹으러 갑시다</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sample_line2">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>330</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>아버지가방에들어가신다</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sample_line4">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>500</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>어머니는 짜장면이 싫다고 하셨어</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sample_line3">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>410</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>외않되</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sample_line5">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>580</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>내일 일 가기 싫다</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

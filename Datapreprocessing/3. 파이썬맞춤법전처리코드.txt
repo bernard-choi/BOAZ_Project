@@ -1,0 +1,24 @@
+import pandas as pd
+all = pd.read_csv("C://Users//ss//Downloads//1F60D_FINAL4.csv",encoding='utf-8')
+all.x = [str(x) for x in all.x]
+yunsik = [x for x in all.x if len(x)>10]
+all=pd.DataFrame({'tweet':yunsik})
+all
+url2='https://m.search.naver.com/p/csearch/ocontent/util/SpellerProxy?_callback=mycallback&q=' + all.tweet + '&where=nexearch&color_blindness=0&_=1544439622507'
+import requests
+response = []
+for i in range(len(all)):
+    a = requests.get(url2[i]).text
+    response.append(a)
+    print(i)
+t = pd.DataFrame({"url" : response})
+json_string = t.url.map(lambda x : x.replace('mycallback(','').replace(');',''))
+json_string = pd.DataFrame({"json": json_string})
+json_string = json_string.json[json_string.json.str.contains('DOCTYPE')==False].reset_index().drop(['index'],axis=1)
+import json
+result = json_string.json.map(lambda x : json.loads(x))
+ss = []
+for i in range(len(result)):
+    a = result[i]['message']['result']['notag_html']
+    ss.append(a)
+pd.DataFrame({"tweet":ss}).to_csv("1F60D_2F4.csv",index=0)

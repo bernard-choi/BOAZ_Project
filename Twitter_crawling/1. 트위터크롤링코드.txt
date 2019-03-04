@@ -1,0 +1,1 @@
+twitterscraper %F0%9F%99%88 -l 500000 -bd 2018-01-01 -ed 2018-12-31 --lang ko --output 1F648_2018.json

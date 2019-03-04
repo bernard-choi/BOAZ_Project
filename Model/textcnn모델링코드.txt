@@ -1,0 +1,223 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+import pickle
+
+
+# token 1,2,3로 모델링 할겁니다
+
+with open ('tokens_1', 'rb') as fp:
+    tokens1 = pickle.load(fp)
+
+with open ('tokens_2', 'rb') as fp:
+    tokens2 = pickle.load(fp)
+
+with open ('tokens_3', 'rb') as fp:
+    tokens3 = pickle.load(fp)
+
+
+# total data 트윗과 라벨나눠서 dataframe 만들기
+# cnn 모델 넣기 전 토크나이징한 데이터를 하나의 문장으로 연결하는 코드
+
+total_tokens = tokens1 + tokens2 + tokens3 
+
+token = [j for i,j in total_tokens]
+label = [i for i,j in total_tokens]
+
+
+final = pd.DataFrame({"tweet":token})
+final.tweet = final.tweet.map(lambda x : ' '.join(x))
+
+
+# 품사 제거하는 코드
+hangul = re.compile('[^ \u3131-\u3163\uac00-\ud7a3]+')
+result = final.tweet.map(lambda x : hangul.sub('', x))
+
+final_data_tokens= pd.DataFrame({"tweet":result})
+label= pd.DataFrame({"label":label})
+token_data = pd.concat([final_data_tokens,label],axis=1)
+
+
+#length 2이상 50이하인 트윗들만 남기고 제거
+
+def check_length(contents):
+    length = []
+    for document in contents:
+        document_length = len(document.split())
+        length.append(document_length)
+    return length
+
+length = check_length(final_data_tokens)
+
+hyewon = pd.DataFrame({'length':length})
+
+token_data = pd.concat([token_data, hyewon], axis=1)
+
+token_data2 = token_data[token_data['length']<=50]
+token_data2 = token_data2[2 <= token_data2['length']]
+
+
+
+
+# 가장 긴 길이의 문장 체크, 그 후 모든 데이터를 가장 긴 길이의 데이터에 맞춰서 padding
+
+def check_maxlength(contents):
+    max_document_length = 0
+    for document in contents:
+        document_length = len(document.split())
+        if document_length > max_document_length:
+            max_document_length = document_length
+    return max_document_length
+
+max_document_length = check_maxlength(token_data2.tweet)
+
+
+def make_input(documents, max_document_length):
+    # tensorflow.contrib.learn.preprocessing 내에 VocabularyProcessor라는 클래스를 이용
+    # 모든 문서에 등장하는 단어들에 인덱스를 할당
+    # 길이가 다른 문서를 max_document_length로 맞춰주는 역할
+    vocab_processor = tf.contrib.learn.preprocessing.VocabularyProcessor(max_document_length)  # 객체 선언
+    x = np.array(list(vocab_processor.fit_transform(documents)))
+    ### 텐서플로우 vocabulary processor
+    # Extract word:id mapping from the object.
+    # word to ix 와 유사
+    vocab_dict = vocab_processor.vocabulary_._mapping
+    
+    # Sort the vocabulary dictionary on the basis of values(id).
+    sorted_vocab = sorted(vocab_dict.items(), key=lambda x: x[1])
+    # Treat the id's as index into list and create a list of words in the ascending order of id's
+    # word with id i goes at index i of the list.
+    vocabulary = list(list(zip(*sorted_vocab))[0])
+    return sorted_vocab, x, len(vocab_processor.vocabulary_)
+
+vocab_dict, x, vocab_size = make_input(token_data2.tweet, max_document_length)
+
+
+#train, test 나누기
+
+X = x.tolist()
+X = pd.DataFrame({"array":X})
+
+from sklearn.model_selection import train_test_split
+X_train,X_test,y_train,y_test = train_test_split(X.array,token_data2.label,test_size=0.25,random_state=0)
+
+
+# label data도 one-hot으로 인코딩해줌
+
+from keras.utils import to_categorical
+y_train = to_categorical(np.asarray(y_train[y_train.index]))
+
+
+# 위키피디아에서 제공한 pretrained vector인 ko.bin 을 활용해서 embedding matrix 생성, ko.bin에 없는 단어는 난수 추출해서 embedding
+
+import gensim
+from gensim.models import Word2Vec
+from gensim.utils import simple_preprocess
+
+from gensim.models.keyedvectors import KeyedVectors
+
+word_vectors = gensim.models.Word2Vec.load('ko.bin')
+
+
+import numpy as np
+EMBEDDING_DIM=200
+vocabulary_size= vocab_size
+embedding_matrix = np.zeros((vocabulary_size, EMBEDDING_DIM))
+for word, i in x.items():
+    if i>=  vocabulary_size :
+        continue
+    try:
+        embedding_vector = word_vectors[word]
+        embedding_matrix[i] = embedding_vector
+    except KeyError:
+        embedding_matrix[i]=np.random.normal(0,np.sqrt(0.25),EMBEDDING_DIM)
+
+
+del(word_vectors)
+from keras.layers import Embedding
+embedding_layer = Embedding(vocabulary_size,
+                            EMBEDDING_DIM,
+                            weights=[embedding_matrix],
+                            trainable=True)
+
+from keras.layers import Dense, Input, GlobalMaxPooling1D
+from keras.layers import Conv1D, MaxPooling1D, Embedding
+from keras.models import Model
+from keras.layers import Input, Dense, Embedding, Conv2D, MaxPooling2D, Dropout,concatenate
+from keras.layers.core import Reshape, Flatten
+from keras.callbacks import EarlyStopping
+from keras.optimizers import Adam
+from keras.models import Model
+from keras import regularizers
+
+sequence_length = mydata.shape[1]
+filter_sizes = [3,4,5]
+num_filters = 100
+drop = 0.5
+EMBEDDING_DIM = 200
+
+
+
+inputs = Input(shape=(sequence_length,))
+embedding = embedding_layer(inputs)
+reshape = Reshape((sequence_length,EMBEDDING_DIM,1))(embedding)
+
+conv_0 = Conv2D(num_filters, (filter_sizes[0], EMBEDDING_DIM),activation='relu',kernel_regularizer=regularizers.l2(0.01))(reshape)
+conv_1 = Conv2D(num_filters, (filter_sizes[1], EMBEDDING_DIM),activation='relu',kernel_regularizer=regularizers.l2(0.01))(reshape)
+conv_2 = Conv2D(num_filters, (filter_sizes[2], EMBEDDING_DIM),activation='relu',kernel_regularizer=regularizers.l2(0.01))(reshape)
+
+
+maxpool_0 = MaxPooling2D((sequence_length - filter_sizes[0] + 1, 1), strides=(1,1))(conv_0)
+maxpool_1 = MaxPooling2D((sequence_length - filter_sizes[1] + 1, 1), strides=(1,1))(conv_1)
+maxpool_2 = MaxPooling2D((sequence_length - filter_sizes[2] + 1, 1), strides=(1,1))(conv_2)
+
+merged_tensor = concatenate([maxpool_0, maxpool_1, maxpool_2], axis=1)
+flatten = Flatten()(maxpool_0)
+reshape = Reshape((3*num_filters,))(flatten)
+dropout = Dropout(drop)(flatten)
+output = Dense(units=3, activation='softmax',kernel_regularizer=regularizers.l2(0.01))(dropout)
+
+# this creates a model that includes
+model = Model(inputs, output)
+
+
+
+
+X_train2 = np.asarray(X_train.tolist())
+X_test2 = np.asarray(X_test.tolist())
+
+
+adam = Adam(lr=1e-3)
+
+model.compile(loss='categorical_crossentropy',
+              optimizer=adam,
+              metrics=['acc'])
+callbacks = [EarlyStopping(monitor='val_loss')]
+model.fit(X_train2, y_train, batch_size=1000, epochs=10, verbose=1)
+
+
+# Accuracy 측정
+
+yhat = model.predict(X_test2)
+data1 = yhat.tolist()
+data2 = pd.DataFrame({"softmax":data1})
+
+idx = data2.softmax.map(lambda x: (-np.asarray(x,dtype=np.float32)).argsort()[:5])
+
+data_real = y_test.tolist()
+data_real2 = pd.DataFrame({"real":data_real})
+
+idx = pd.DataFrame({"pred":idx})
+predict = pd.concat([idx,data_real2],axis=1)
+
+
+def hyewon(x,y):
+    if x in y:
+        return True
+    else :
+        return False
+
+predict['YesorNo'] = predict.apply(lambda x: yunsik(x['real'],x['pred']),axis=1)
+
+correct = predict[predict['YesorNo']==True]
+len(correct)/len(idx)
+
