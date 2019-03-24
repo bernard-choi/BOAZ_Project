@@ -1,0 +1,31 @@
+## 불필요한 데이터 제거 후 특수문자 제거
+
+
+
+remove <- function(x) {
+  x <- gsub("[<].+[>]", "", x)
+  x<- gsub("@[[:graph:]]*", "", x)
+  x<- gsub("#[[:graph:]]*","",x)
+  x <- gsub("http://[[:graph:]]*", "", x)
+  x<- gsub("https://[[:graph:]]*", "", x)
+  x <- gsub("pic.twitter.com/[[:graph:]]*", "", x)
+  x<- gsub("RT","",x)
+  x<- gsub("\n"," ",x)
+  x <- gsub("_"," ",x)
+  x <- gsub("[[:punct:][:blank:]]+", " ",x)
+  x <- gsub('[0-9]+', '', x)
+  x <- gsub('[a-zA-Z]','',x)
+  x <- gsub("\r"," ",x)
+  x <- gsub("  "," ",x)
+  x <- gsub("   "," ",x)
+  x <- gsub("    "," ",x)
+  x <- gsub("     "," ",x)
+  x <- gsub("      "," ",x)
+  x <- gsub("       "," ",x)
+  x <- gsub("        "," ",x)
+  x <- gsub("         "," ",x)
+}  
+newnewdf <- remove(newdf) 
+write.csv(newnewdf,"1F601_1_1차.csv",fileEncoding='UTF-8')
+
+

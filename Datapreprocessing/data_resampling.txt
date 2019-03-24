@@ -1,3 +1,5 @@
+## pre-processing 이후 label별 data 갯수를 10만개로 balancing 작업
+
 import pandas as pd
 total = pd.read_csv("totalwithlabel.csv",encoding='utf-8')
 

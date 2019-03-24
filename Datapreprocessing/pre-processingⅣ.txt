@@ -1,3 +1,5 @@
+# preprocessin 이후 맞춤법, 띄어쓰기 검사
+
 import pandas as pd
 all = pd.read_csv("C://Users//ss//Downloads//1F60D_FINAL4.csv",encoding='utf-8')
 all.x = [str(x) for x in all.x]

@@ -1,0 +1,65 @@
+# 라벨별로 크롤링한 파일 불러와서 KEYWORD 기반으로 불필요한 데이터 제거
+
+library(data.table)
+data<- fread("1F601_2.csv",encoding='UTF-8')
+colnames(data) <- c("V1","V2")
+delete <- function(data) {
+  data <- data[ grep("카카오톡", data$V2, invert = TRUE) , ]
+  data <- data[ grep("카톡", data$V2, invert = TRUE) , ]
+  data <- data[ grep("상담", data$V2, invert = TRUE) , ]
+  data <- data[ grep("주소", data$V2, invert = TRUE) , ]
+  data <- data[ grep("예약", data$V2, invert = TRUE) , ]
+  data <- data[ grep("문의", data$V2, invert = TRUE) , ]
+  data <- data[ grep("환불", data$V2, invert = TRUE) , ]
+  data <- data[ grep("링크", data$V2, invert = TRUE) , ]
+  data <- data[ grep("추천", data$V2, invert = TRUE) , ]
+  data <- data[ grep("노리터", data$V2, invert = TRUE) , ]
+  data <- data[ grep("ㅂㅐ팅", data$V2, invert = TRUE) , ]
+  data <- data[ grep("디엠", data$V2, invert = TRUE) , ]
+  data <- data[ grep("양도", data$V2, invert = TRUE) , ]
+  data <- data[ grep("뎀주세요", data$V2, invert = TRUE) , ]
+  data <- data[ grep("굿즈", data$V2, invert = TRUE) , ]
+  data <- data[ grep("첫콘", data$V2, invert = TRUE) , ]
+  data <- data[ grep("막콘", data$V2, invert = TRUE) , ]
+  data <- data[ grep("앙스타", data$V2, invert = TRUE) , ]
+  data <- data[ grep("힝구",data$V2, invert = TRUE) , ]
+  data <- data[ grep("콘서트", data$V2, invert = TRUE) , ]
+  data <- data[ grep("입금", data$V2, invert = TRUE) , ]
+  data <- data[ grep("탄님", data$V2, invert = TRUE) , ]
+  data <- data[ grep("밍탄", data$V2, invert = TRUE) , ]
+  data <- data[ grep("후탄", data$V2, invert = TRUE) , ]
+  data <- data[ grep("티탄", data$V2, invert = TRUE) , ]
+  data <- data[ grep("반모", data$V2, invert = TRUE) , ]
+  data <- data[ grep("찔러봐주세", data$V2, invert = TRUE) , ]
+  data <- data[ grep("멜론", data$V2, invert = TRUE) , ]
+  data <- data[ grep("나눔", data$V2, invert = TRUE) , ]
+  data <- data[ grep("전력주제", data$V2, invert = TRUE) , ]
+  data <- data[ grep("본무대", data$V2, invert = TRUE) , ]
+  data <- data[ grep("뮤직뱅크", data$V2, invert = TRUE) , ]
+  data <- data[ grep("라빗츠", data$V2, invert = TRUE) , ]
+  data <- data[ grep("본계", data$V2, invert = TRUE) , ]
+  data <- data[ grep("본계정", data$V2, invert = TRUE) , ]
+  data <- data[ grep("홈마", data$V2, invert = TRUE) , ]
+  data <- data[ grep("연성", data$V2, invert = TRUE) , ]
+  data <- data[ grep("라잇이",data$V2, invert = TRUE) , ]
+  data <- data[ grep("직거래", data$V2, invert = TRUE) , ]
+  data <- data[ grep("쿨거", data$V2, invert = TRUE) , ]
+  data <- data[ grep("찔러봐", data$V2, invert = TRUE) , ]
+  data <- data[ grep("아무구역", data$V2, invert = TRUE) , ]
+  data <- data[ grep("키르아", data$V2, invert = TRUE) , ]
+  data <- data[ grep("투표해", data$V2, invert = TRUE) , ]
+  data <- data[ grep("선팔", data$V2, invert = TRUE) , ]
+  data <- data[ grep("종주님", data$V2, invert = TRUE) , ]
+  data <- data[ grep("샐리", data$V2, invert = TRUE) , ]
+  data <- data[ grep("네코마", data$V2, invert = TRUE) , ]
+  data <- data[ grep("우티교환", data$V2, invert = TRUE) , ]
+  data <- data[ grep("양도표", data$V2, invert = TRUE) , ]
+  data <- data[ grep("초동", data$V2, invert = TRUE) , ]
+  data <- data[ grep("추금", data$V2, invert = TRUE) , ]
+  data <- data[ grep("테오", data$V2, invert = TRUE) , ]
+}  
+
+
+tmp <- delete(data[,2])
+df = as.data.frame(x = tmp)
+

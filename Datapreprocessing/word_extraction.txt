@@ -1,0 +1,38 @@
+## https://github.com/lovit/soynlp  참고
+## 학습 데이터 Word List 추출
+## 추후 오탈자 교정, 사전 추가 작업 시 이용 
+
+import pandas as pd
+extraction = pd.read_csv("total with label.csv",encoding='utf-8')
+
+from soynlp.word import WordExtractor
+
+word_extractor = WordExtractor(
+min_frequency = 100,
+min_cohesion_forward = 0.05,
+min_right_branching_entropy = 0)
+
+word_extractor.train(extraction.tweet)
+
+words = word_extractor.extract()
+
+import math
+
+def word_score(score):
+    return (score.cohesion_forward * math.exp(score.right_branching_entropy))
+
+wordsforLst = []
+leftside_frequency = []
+cohesion_forward = []
+right_branching_entropy = []
+
+for word, score in sorted(words.items(), key=lambda x:word_score(x[1]), reverse=True)[:]:
+    wordsforLst.append(word) 
+    leftside_frequency.append(score.leftside_frequency) 
+    cohesion_forward.append(score.cohesion_forward)
+    right_branching_entropy.append(score.right_branching_entropy)
+
+
+WordsLst= pd.DataFrame({'words':wordsforLst,'leftside_frequncy':leftside_frequency,'cohesion_forward':cohesion_forward,'right_branching_entropy':right_branching_entropy})
+
+WordsLst.to_csv("worfdLst_sonlpy.csv",encoding = 'euc-kr')
