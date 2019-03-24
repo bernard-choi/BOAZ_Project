@@ -1,0 +1,51 @@
+import numpy as np
+import pandas as pd
+import re
+
+df = pd.read_csv("total with balance.csv",encoding='utf-8')
+df_test = pd.read_csv("test_balance.csv",encoding='utf-8')
+
+
+
+df.labels_text = df.labels_text.str.cat(df.tweet, sep=' ')
+df_test.labels_text = df_test.labels_text.str.cat(df_test.Tweet, sep=' ')
+
+
+training_file = open('train.txt','w',encoding='utf-8')
+training_file.writelines(df.labels_text + '\n')
+training_file.close()
+
+
+import fastText as ft
+classifier1 = ft.FastText.train_supervised('train.txt', lr=0.1, wordNgrams=3, epoch=20, loss='softmax')
+
+predictions1 = df_test.tweet.apply(lambda x:classifier1.predict(str(x),k=5))
+
+
+## 정확도 확인
+prediction=predictions1[0]
+
+prediction_1 = pd.DataFrame({'label':prediction})
+
+prediction_1 = prediction_1.label.apply(lambda x: re.sub('__label__','',x))
+
+pred = predictions1.tolist()
+
+prd = pd.DataFrame({"pred":pred})
+
+final = pd.concat([df_test,prd],axis=0)
+
+prd = pd.concat([prd.pred,df_test.labels_text,df_test.tweet],axis=1)
+
+def check(x,y):
+    if x in y:
+        return True
+    else :
+        return False    
+
+prd['YesorNo'] = prd.apply(lambda x: yunsik(x['labels_text'],x['predictions']),axis=1)
+
+prd['predictions'] = [i for i,j in prd.pred]
+
+t = prd[prd['YesorNo']==True]
+len(t)/len(prd)
