@@ -3,15 +3,15 @@
 
 Did List
 ---
--[18.08.10] 자연어처리 팀 결성. 주제선정회의
+- [18.08.10] 자연어처리 팀 결성. 주제선정회의
 
--[18.08.16] cs224n 스터디 구성. 아이디어 추가
+- [18.08.16] cs224n 스터디 구성. 아이디어 추가
 
--[18.08.23] 주제 아이디어 추가.
+- [18.08.23] 주제 아이디어 추가.
 
--[18.08.30] 아이디어 확정.(이모지 추천 시스템)
+- [18.08.30] 아이디어 확정.(이모지 추천 시스템)
 
--[18.09.06] SemEval-2018 Multilingual Emoji Prediction toy data로 실습
+- [18.09.06] SemEval-2018 Multilingual Emoji Prediction toy data로 실습
 
 -[18.09.13] SemEval-2018 Multilingual Emoji Prediction toy data로 실습
 
