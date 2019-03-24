@@ -51,3 +51,12 @@ To Do List
 
 - 데이터 임베딩(fasttext, Lookuptable, word2vec, glove) 다르게 해서 결과값 비교
 
+NLP
+---
+- 관련 컴피티션
+
+- 관련논문
+  - edsddofbw
+
+
+
