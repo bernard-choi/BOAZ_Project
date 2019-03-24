@@ -37,7 +37,7 @@ Did List
 
 - [18.12.20] Emojitracker 기반 추천할 이모지들 최종 결정. 전처리 다시 새로함.
 
-- [18.12.27] Pyqt구현 시연. 컨퍼런스 리허설 피드백 수렴
+- [18.12.27] Pyqt시연. 컨퍼런스 리허설 피드백 수렴
 
 - [19.01.13] Fasttext와 Bilstm with attention모델 비교 정리.
 
