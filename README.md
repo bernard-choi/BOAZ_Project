@@ -1,5 +1,5 @@
 # BOAZ_Project
-감정기반 이모지추천 시스템(김지연 이명아 이혜원 최연식)
+## 감정기반 이모지추천 시스템(김지연 이명아 이혜원 최연식)
 
 ![](https://user-images.githubusercontent.com/36406676/54875373-417c0b80-4e41-11e9-88ca-fcf5c6548176.png)
 
