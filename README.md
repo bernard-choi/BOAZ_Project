@@ -39,7 +39,7 @@ Did List
 
 - [18.12.27] Pyqt구현 시연. 컨퍼런스 리허설 피드백 수렴
 
-- [19.01.13] Fasttext와 Bilstam with attention모델 비교 정리.
+- [19.01.13] Fasttext와 Bilstm with attention모델 비교 정리.
 
 
 
