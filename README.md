@@ -49,5 +49,5 @@ To Do List
 
 - Pyqt에 칼라 이미지 삽입(현재 유니코드로 대응시킴)
 
-- 데이터 임베딩(fasttext, Lookuptable, word2vec, glove) 해서 결과값 비교
+- 데이터 임베딩(fasttext, Lookuptable, word2vec, glove) 다르게 해서 결과값 비교
 
