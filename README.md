@@ -41,5 +41,13 @@ Did List
 
 - [19.01.13] Fasttext와 Bilstm with attention모델 비교 정리.
 
+To Do List
+---
+[19.01.13]
 
+- 데이터 전처리 추가 예정(네이버 맞춤법 검사기)
+
+- Pyqt에 칼라 이미지 삽입(현재 유니코드로 대응시킴)
+
+- 데이터 임베딩(fasttext, Lookuptable, word2vec, glove) 해서 결과값 비교
 
