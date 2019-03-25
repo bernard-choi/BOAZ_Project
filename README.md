@@ -57,8 +57,18 @@ NLP
 ---
 - 관련 컴피티션
 
-- 관련논문
-  - edsddofbw
+- 강의
+  - CS224n
+    lecture
+    syllabu
+  - CS231n
+    lecture
+    syllabus
+- 관련논문/깃헙
+  - http://aclweb.org/anthology/S18-1003
+  - https://github.com/bfelbo/DeepMoji
+
+
 
 
 
