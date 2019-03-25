@@ -1,7 +1,13 @@
-# BOAZ_Project
-## 감정기반 이모지추천 시스템(김지연 이명아 이혜원 최연식)
+## BOAZ_Project
+#### 감정기반 이모지추천 시스템(김지연 이명아 이혜원 최연식)
 
+#####
 ![](https://user-images.githubusercontent.com/36406676/54875373-417c0b80-4e41-11e9-88ca-fcf5c6548176.png)
+
+Presentation
+---
+- BOAZ 9th Conference : [너의 기분이모지?](https://www.youtube.com/watch?v=PElfNl7bH-w&t=235s)
+- BOAZ Slideshare : [너의 기분이모지?_PPT](https://www.slideshare.net/BOAZbigdata/9-boaz-emoji)
 
 Did List
 ---
@@ -56,104 +62,100 @@ To Do List
 강의
 ---
 - CS224n
-  lecture
-  syllabu
+  - [lecture](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
+  - [syllabu](http://web.stanford.edu/class/cs224n/syllabus.html)
 - CS231n
-  lecture
-  syllabus
+  - [lecture](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
+  - [syllabus](http://cs231n.stanford.edu/2017/syllabus.html)
 
 Data Crawling
 ---
-- twitterscraper 
-https://github.com/taspinar/twitterscraper
+- [twitterscraper](https://github.com/taspinar/twitterscraper)
 
 Data Preprocessing
 ---
 1. customized KoNLPy
-https://github.com/lovit/customized_konlpy
+    - [luvit github](https://github.com/lovit/customized_konlpy)
 
 2. Soynlp
-https://github.com/lovit/soynlp
+    - [luvit github](https://github.com/lovit/soynlp)
 
 3. 트위터 한국어 처리기 (twitter-korean-text)
-https://github.com/twitter/twitter-korean-text
+    - [twitterkoreantext github](https://github.com/twitter/twitter-korean-text)
 
 4. Pycon2017 koreanNLP (konlpy,soynlp 정리 ppt)
-https://www.slideshare.net/kimhyunjoonglovit/pycon2017-koreannlp
+    - [slideshare](https://www.slideshare.net/kimhyunjoonglovit/pycon2017-koreannlp)
 
 5. 형태소 분석기 성능 비교 ratsgo’s blog
-https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/10/postag/
+    - [ratsgo's blog](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/10/postag/)
 
-6. 맞춤법검사기
-https://www.youtube.com/watch?v=RZqRkoSaoYA
+6. Naver 맞춤법검사기
+    - [youtube](https://www.youtube.com/watch?v=RZqRkoSaoYA)
 
 7. resampling
-https://www.kaggle.com/rafjaa/resampling-strategies-for-imbalanced-datasets
-https://www.slideshare.net/PyData/python-resampling-65637486
+    - [kaggle link](https://www.kaggle.com/rafjaa/resampling-strategies-for-imbalanced-datasets)
+    - [slide share](https://www.slideshare.net/PyData/python-resampling-65637486)
 
 NLP Model
 ---
-- 관련 컴피티션
 
 1. CNN
-  - Ratsgo’s blog CNN으로 문장분류하기
-    https://ratsgo.github.io/natural%20language%20processing/2017/03/19/CNN/
-  - CNN in keras with pretrained word2vec (코드)
-    https://www.kaggle.com/marijakekic/cnn-in-keras-with-pretrained-word2vec-weights
-  - cnn-text-classification 설명
-    http://docs.likejazz.com/cnn-text-classification-tf/ 
-  - implementing CNN for Text classification in tensorflow 설명 
-    http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/
-  - pytorch text-Cnn
-    https://www.kaggle.com/ziliwang/pytorch-text-cnn
-  - Cnn text classification with word2vec
-    https://github.com/juanmangh/CNN-text-classification-with-Word2Vec/blob/master/CNN-text-classification-model-using-word2vec_Presentation.pdf
+    - Ratsgo’s blog CNN으로 문장분류하기
+     : [ratsgo's blog](https://ratsgo.github.io/natural%20language%20processing/2017/03/19/CNN/)
+    - CNN in keras with pretrained word2vec 
+     : [kaggle link](https://www.kaggle.com/marijakekic/cnn-in-keras-with-pretrained-word2vec-weights)
+    - CNN-text-classification 설명
+     : [CNN text classification](http://docs.likejazz.com/cnn-text-classification-tf/)
+    - implementing CNN for Text classification in tensorflow 설명 
+     : [CNN in tensorflow](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)
+    - pytorch text-Cnn
+     : [kaggle link](https://www.kaggle.com/ziliwang/pytorch-text-cnn)
+    - Cnn text classification with word2vec
+     : [gihub link](https://github.com/juanmangh/CNN-text-classification-with-Word2Vec/blob/master/CNN-text-classification-model-using-word2vec_Presentation.pdf)
 
 2. FastText
-  - facebook’s fastText algorithm
-    https://www.kaggle.com/heesoo37/facebook-s-fasttext-algorithm
+    - facebook’s fastText algorithm
+     : [kaggle link](https://www.kaggle.com/heesoo37/facebook-s-fasttext-algorithm)
 
 3. Bilstm / LSTM
-  - emoji_predictor (깃헙)
-    https://github.com/neonrights/emoji_predictor/blob/master/Emoji_Prediction_BILSTM_LSTM_model3.ipynb
-  - attention base bilstm (깃헙)
-    https://github.com/SeoSangwoo/Attention-Based-BiLSTM-relation-extraction
-  - ratsgo’s blog bi-Lstm hegemony
-    https://ratsgo.github.io/natural%20language%20processing/2017/10/22/manning/
-  - ratsgo’s blog rnn과 lstm 설명 
-    https://ratsgo.github.io/natural%20language%20processing/2017/03/09/rnnlstm/
-  - sentimental analysis bilstm을 이용한 영화 리뷰 감성분석
-    https://github.com/MSWon/Sentimental-Analysis
-  - pytorch bilstm  
-    https://www.kaggle.com/ziliwang/baseline-pytorch-bilstm
+    - Emoji Prediction with BILSTM & LSTM model
+     : [github link](https://github.com/neonrights/emoji_predictor/blob/master/Emoji_Prediction_BILSTM_LSTM_model3.ipynb)
+    - attention base bilstm
+     : [github link](https://github.com/SeoSangwoo/Attention-Based-BiLSTM-relation-extraction)
+    - ratsgo’s blog bi-Lstm hegemony
+     : [ratsgo's blog](https://ratsgo.github.io/natural%20language%20processing/2017/10/22/manning/)
+    - ratsgo’s blog rnn과 lstm 설명 
+     : [ratsgo's blog](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/rnnlstm/)
+    - sentimental analysis bilstm을 이용한 영화 리뷰 감성분석
+     : [github link])https://github.com/MSWon/Sentimental-Analysis)
+    - pytorch bilstm  
+     : [kaggle link](https://www.kaggle.com/ziliwang/baseline-pytorch-bilstm)
 
 4. text classification model 총괄 (CNN & RNN & Bilstm)
-  - cnn/rnn 관련 자료 깃헙
-    https://github.com/dongjun-Lee/text-classification-models-tf
-  - deeplearning 4 text classification (cNN, bilstm)
-    https://www.kaggle.com/kakiac/deep-learning-4-text-classification-cnn-bi-lstm
+    - cnn/rnn text classification 관련 자료 
+     : [github link](https://github.com/dongjun-Lee/text-classification-models-tf)
+    - deeplearning 4 text classification (cNN, bilstm)
+     : [kaggle link](https://www.kaggle.com/kakiac/deep-learning-4-text-classification-cnn-bi-lstm)
 5. word rembedding
-  - bag of words
-    https://khanrc.tistory.com/entry/kaggle-Bag-of-Words-Meet-Bags-of-Popcorn-1-Part-1
-  - word2vec (skip-gram)
-    https://towardsdatascience.com/word2vec-skip-gram-model-part-2-implementation-in-tf-7efdf6f58a27
+   - bag of words
+     : [BOW](https://khanrc.tistory.com/entry/kaggle-Bag-of-Words-Meet-Bags-of-Popcorn-1-Part-1)
+    - word2vec (skip-gram)
+     : [W2V_skipgram](https://towardsdatascience.com/word2vec-skip-gram-model-part-2-implementation-in-tf-7efdf6f58a27)
 
 pyqt
 ---
-
-https://www.youtube.com/watch?v=LYu5x339USM 
-https://opentutorials.org/module/544 
+- [pyqt 강의 영상](https://www.youtube.com/watch?v=LYu5x339USM) 
+- [pyqt tutorial](https://opentutorials.org/module/544)
 
 Deepmoji / Emoji 관련 사이트
 ---
-- https://deepmoji.mit.edu/  :  딥모지 사이트
-- http://emojitracker.com/  : 이모지트래커
+- [Deepmoji site](https://deepmoji.mit.edu/)
+- [emojitacker](http://emojitracker.com/)  
 
 관련논문/깃헙
 ---
-- http://aclweb.org/anthology/S18-1003
-- https://github.com/bfelbo/DeepMoji
-
+- [Paper](http://aclweb.org/anthology/S18-1003)
+- [Mit github](https://github.com/bfelbo/DeepMoji)
 
 
 
