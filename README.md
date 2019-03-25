@@ -127,14 +127,14 @@ NLP Model
     - ratsgo’s blog rnn과 lstm 설명 
      : [ratsgo's blog](https://ratsgo.github.io/natural%20language%20processing/2017/03/09/rnnlstm/)
     - sentimental analysis bilstm을 이용한 영화 리뷰 감성분석
-     : [github link])https://github.com/MSWon/Sentimental-Analysis)
+     : [github link](https://github.com/MSWon/Sentimental-Analysis)
     - pytorch bilstm  
      : [kaggle link](https://www.kaggle.com/ziliwang/baseline-pytorch-bilstm)
 
 4. text classification model 총괄 (CNN & RNN & Bilstm)
     - cnn/rnn text classification 관련 자료 
      : [github link](https://github.com/dongjun-Lee/text-classification-models-tf)
-    - deeplearning 4 text classification (cNN, bilstm)
+    - deeplearning 4 text classification (CNN, Bilstm)
      : [kaggle link](https://www.kaggle.com/kakiac/deep-learning-4-text-classification-cnn-bi-lstm)
 5. word rembedding
    - bag of words
@@ -150,7 +150,7 @@ pyqt
 Deepmoji / Emoji 관련 사이트
 ---
 - [Deepmoji site](https://deepmoji.mit.edu/)
-- [emojitacker](http://emojitracker.com/)  
+- [emojitracker](http://emojitracker.com/)  
 
 관련논문/깃헙
 ---
