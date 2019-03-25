@@ -136,7 +136,7 @@ NLP Model
      : [github link](https://github.com/dongjun-Lee/text-classification-models-tf)
     - deeplearning 4 text classification (CNN, Bilstm)
      : [kaggle link](https://www.kaggle.com/kakiac/deep-learning-4-text-classification-cnn-bi-lstm)
-5. word rembedding
+5. word embedding
    - bag of words
      : [BOW](https://khanrc.tistory.com/entry/kaggle-Bag-of-Words-Meet-Bags-of-Popcorn-1-Part-1)
     - word2vec (skip-gram)
