@@ -63,7 +63,7 @@ To Do List
 ---
 - CS224n
   - [lecture](https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6)
-  - [syllabu](http://web.stanford.edu/class/cs224n/syllabus.html)
+  - [syllabus](http://web.stanford.edu/class/cs224n/syllabus.html)
 - CS231n
   - [lecture](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
   - [syllabus](http://cs231n.stanford.edu/2017/syllabus.html)
@@ -84,7 +84,7 @@ Data Preprocessing
     - [twitterkoreantext github](https://github.com/twitter/twitter-korean-text)
 
 4. Pycon2017 koreanNLP (konlpy,soynlp 정리 ppt)
-    - [slideshare](https://www.slideshare.net/kimhyunjoonglovit/pycon2017-koreannlp)
+    - [slide share](https://www.slideshare.net/kimhyunjoonglovit/pycon2017-koreannlp)
 
 5. 형태소 분석기 성능 비교 ratsgo’s blog
     - [ratsgo's blog](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/05/10/postag/)
@@ -111,7 +111,7 @@ NLP Model
     - pytorch text-Cnn
      : [kaggle link](https://www.kaggle.com/ziliwang/pytorch-text-cnn)
     - Cnn text classification with word2vec
-     : [gihub link](https://github.com/juanmangh/CNN-text-classification-with-Word2Vec/blob/master/CNN-text-classification-model-using-word2vec_Presentation.pdf)
+     : [github link](https://github.com/juanmangh/CNN-text-classification-with-Word2Vec/blob/master/CNN-text-classification-model-using-word2vec_Presentation.pdf)
 
 2. FastText
     - facebook’s fastText algorithm
@@ -131,12 +131,12 @@ NLP Model
     - pytorch bilstm  
      : [kaggle link](https://www.kaggle.com/ziliwang/baseline-pytorch-bilstm)
 
-4. text classification model 총괄 (CNN & RNN & Bilstm)
+4. Text Classification model 총괄 (CNN & RNN & Bilstm)
     - cnn/rnn text classification 관련 자료 
      : [github link](https://github.com/dongjun-Lee/text-classification-models-tf)
     - deeplearning 4 text classification (CNN, Bilstm)
      : [kaggle link](https://www.kaggle.com/kakiac/deep-learning-4-text-classification-cnn-bi-lstm)
-5. word embedding
+5. Word Embedding
    - bag of words
      : [BOW](https://khanrc.tistory.com/entry/kaggle-Bag-of-Words-Meet-Bags-of-Popcorn-1-Part-1)
     - word2vec (skip-gram)
